@@ -6,4 +6,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" />
+    tools:context=".MainActivity" >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MaterialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="20dp"
+        app:srcCompat="@color/card_bg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_color"/>
+
+            <Button
+                android:id="@+id/btnChangeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zmień tekst" />
+
+            <Button
+                android:id="@+id/btnChangeColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zmień kolor tekstu" />
+
+            <Button
+                android:id="@+id/btnChangeBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zmień tło" />
+
+            <Switch
+                android:id="@+id/switchNight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tryb nocny" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/bglmage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/tlo1" />
+
+</LinearLayout>
