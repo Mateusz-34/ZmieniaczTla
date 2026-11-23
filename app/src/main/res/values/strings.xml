@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ZmieniaczTla</string>
+    <string-array name="texts">
+        <item>Tekst 1</item>
+        <item>Tekst 2</item>
+        <item>Tekst 3</item>
+    </string-array>
 </resources>

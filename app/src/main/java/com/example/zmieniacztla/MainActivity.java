@@ -1,6 +1,7 @@
 package com.example.zmieniacztla;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,19 +11,29 @@ import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] texts = {"Tekst 1", "Tekst 2", "Tekst 3"};
+    String[] texts;
     int index = 0;
+
+    int[] styles = {
+            Typeface.NORMAL,
+            Typeface.BOLD,
+            Typeface.ITALIC,
+            Typeface.BOLD_ITALIC
+    };
+    int styleIndex = 0;
 
     int[] colors = {R.color.text_color, R.color.text_opt2, R.color.text_opt3};
     int colorIndex = 0;
 
-    int[] backgrounds = {R.drawable.tlo1, R.drawable.tlo2};
+    int[] backgrounds = {R.drawable.tlo1, R.drawable.tlo2, R.drawable.tlo3};
     int bgIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        texts = getResources().getStringArray(R.array.texts);
 
         TextView tvText = findViewById(R.id.tvText);
         Button btnChangeText = findViewById(R.id.btnChangeText);
@@ -34,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         colorIndex = prefs.getInt("color", 0);
 
         tvText.setText(texts[index]);
+        tvText.setTypeface(null, styles[styleIndex]);
         tvText.setTextColor(ContextCompat.getColor(this, colors[colorIndex]));
         bgImage.setImageResource(backgrounds[bgIndex]);
 
@@ -43,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 index = 0;
             }
             tvText.setText(texts[index]);
+
+            styleIndex++;
+            if (styleIndex == styles.length) {
+                styleIndex = 0;
+            }
+            tvText.setTypeface(null, styles[styleIndex]);
         });
 
         btnChangeColor.setOnClickListener(v -> {
