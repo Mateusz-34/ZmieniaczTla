@@ -4,6 +4,7 @@
     <option name="idToDisplayName">
       <map>
         <entry key="Android Gradle Upgrade Notification" value="Android Gradle Upgrade Notification" />
+        <entry key="Deploy" value="Deploy" />
         <entry key="gradle.daemon.toolchain.migration" value="Migrate to Gradle Daemon toolchain" />
         <entry key="vcs.roots.invalid" value="Invalid VCS root mapping" />
       </map>
